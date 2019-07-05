@@ -1,0 +1,30 @@
+.bg-gradient-primary {
+  background-image: linear-gradient(#4e73df, white); 
+
+}
+
+.bg-register-image {
+    background: url(http://diocesedeitapetininga.org.br/wp-content/uploads/sites/105/2018/08/agenda_internet.jpg);
+    background-position: center;
+    background-size: cover;
+}
+
+.bg-login-image {
+    background: url(http://diocesedeitapetininga.org.br/wp-content/uploads/sites/105/2018/08/agenda_internet.jpg);
+    background-position: center;
+    background-size: cover;
+}    
+
+.bg-password-image {
+    background: url(http://diocesedeitapetininga.org.br/wp-content/uploads/sites/105/2018/08/agenda_internet.jpg);
+    background-position: center;
+    background-size: cover;
+}
+
+.incorreto {
+    color: red;
+}
+
+.correto {
+    color: green;
+}
