@@ -77,10 +77,10 @@ function validarLogin($login, $senha) {
                   </div>
                   <form class="user" id='formulario' method='post' action='<?php $_SERVER['PHP_SELF'] ?>' enctype='multipart/form-data'>
                     <div class="form-group">
-                        <input type="text" class="form-control form-control-user" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Prontuário" name="login" value="<?php if (!empty($_COOKIE['login'])) echo $_COOKIE['login']; ?>" required>
+                        Prontuário: <input type="text" class="form-control form-control-user" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Ex.: 1650000" name="login" value="<?php if (!empty($_COOKIE['login'])) echo $_COOKIE['login']; ?>" required>
                     </div>
                     <div class="form-group">
-                      <input type="password" class="form-control form-control-user" id="exampleInputPassword" placeholder="Senha" name="senha" value="<?php if (!empty($_COOKIE['senha'])) echo $_COOKIE['senha']; ?>" required>
+                      Senha: <input type="password" class="form-control form-control-user" id="exampleInputPassword" placeholder="" name="senha" value="<?php if (!empty($_COOKIE['senha'])) echo $_COOKIE['senha']; ?>" required>
                     </div>
                     <div class="form-group">
                       <div class="custom-control custom-checkbox small">
