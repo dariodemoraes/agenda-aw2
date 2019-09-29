@@ -61,43 +61,11 @@ if ($_POST) {
           <span>Boletim</span></a>
       </li>
 
-      <!-- Nav Item - Dashboard -->
-      <!--
-        <li class="nav-item">
-        <a class="nav-link" href="index.php">
-          <i class="fas fa-fw fa-tachometer-alt"></i>
-          <span>Dashboard</span></a>
-      </li>
-      -->
-
-      <!-- Divider -->
-      <hr class="sidebar-divider">
-
-      <!-- Heading -->
-      <div class="sidebar-heading">
-        Interface
-      </div>
-
-      <!-- Nav Item - Pages Collapse Menu -->
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-          <i class="fas fa-fw fa-cog"></i>
-          <span>Components</span>
-        </a>
-        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-          <div class="bg-white py-2 collapse-inner rounded">
-            <h6 class="collapse-header">Custom Components:</h6>
-            <a class="collapse-item" href="buttons.php">Buttons</a>
-            <a class="collapse-item" href="cards.php">Cards</a>
-          </div>
-        </div>
-      </li>
-
       <!-- Nav Item - Utilities Collapse Menu -->
       <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
           <i class="fas fa-fw fa-wrench"></i>
-          <span>Utilities</span>
+          <span>Componentes úteis</span>
         </a>
         <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
@@ -106,23 +74,17 @@ if ($_POST) {
             <a class="collapse-item" href="utilities-border.php">Borders</a>
             <a class="collapse-item" href="utilities-animation.php">Animations</a>
             <a class="collapse-item" href="utilities-other.php">Other</a>
+			<a class="collapse-item" href="buttons.php">Buttons</a>
+            <a class="collapse-item" href="cards.php">Cards</a>
           </div>
         </div>
       </li>
 
-      <!-- Divider -->
-      <hr class="sidebar-divider">
-
-      <!-- Heading -->
-      <div class="sidebar-heading">
-        Addons
-      </div>
-
       <!-- Nav Item - Pages Collapse Menu -->
       <li class="nav-item active">
-        <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
           <i class="fas fa-fw fa-folder"></i>
-          <span>Pages</span>
+          <span>Páginas</span>
         </a>
         <div id="collapsePages" class="collapse show" aria-labelledby="headingPages" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
@@ -142,14 +104,14 @@ if ($_POST) {
       <li class="nav-item">
         <a class="nav-link" href="charts.php">
           <i class="fas fa-fw fa-chart-area"></i>
-          <span>Charts</span></a>
+          <span>Gráficos</span></a>
       </li>
-
-      <!-- Nav Item - Tables -->
+	  
+	  <!-- Nav Item - Charts -->
       <li class="nav-item">
-        <a class="nav-link" href="tables.php">
-          <i class="fas fa-fw fa-table"></i>
-          <span>Tables</span></a>
+        <a class="nav-link" href="charts.php">
+          <i class="fas fa-fw fa-chart-area"></i>
+          <span>Logout</span></a>
       </li>
 
       <!-- Divider -->
@@ -261,62 +223,6 @@ if ($_POST) {
               </div>
             </li>
 
-            <!-- Nav Item - Messages -->
-            <li class="nav-item dropdown no-arrow mx-1">
-              <a class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <i class="fas fa-envelope fa-fw"></i>
-                <!-- Counter - Messages -->
-                <span class="badge badge-danger badge-counter">7</span>
-              </a>
-              <!-- Dropdown - Messages -->
-              <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="messagesDropdown">
-                <h6 class="dropdown-header">
-                  Message Center
-                </h6>
-                <a class="dropdown-item d-flex align-items-center" href="#">
-                  <div class="dropdown-list-image mr-3">
-                    <img class="rounded-circle" src="https://source.unsplash.com/fn_BT9fwg_E/60x60" alt="">
-                    <div class="status-indicator bg-success"></div>
-                  </div>
-                  <div class="font-weight-bold">
-                    <div class="text-truncate">Hi there! I am wondering if you can help me with a problem I've been having.</div>
-                    <div class="small text-gray-500">Emily Fowler · 58m</div>
-                  </div>
-                </a>
-                <a class="dropdown-item d-flex align-items-center" href="#">
-                  <div class="dropdown-list-image mr-3">
-                    <img class="rounded-circle" src="https://source.unsplash.com/AU4VPcFN4LE/60x60" alt="">
-                    <div class="status-indicator"></div>
-                  </div>
-                  <div>
-                    <div class="text-truncate">I have the photos that you ordered last month, how would you like them sent to you?</div>
-                    <div class="small text-gray-500">Jae Chun · 1d</div>
-                  </div>
-                </a>
-                <a class="dropdown-item d-flex align-items-center" href="#">
-                  <div class="dropdown-list-image mr-3">
-                    <img class="rounded-circle" src="https://source.unsplash.com/CS2uCrpNzJY/60x60" alt="">
-                    <div class="status-indicator bg-warning"></div>
-                  </div>
-                  <div>
-                    <div class="text-truncate">Last month's report looks great, I am very happy with the progress so far, keep up the good work!</div>
-                    <div class="small text-gray-500">Morgan Alvarez · 2d</div>
-                  </div>
-                </a>
-                <a class="dropdown-item d-flex align-items-center" href="#">
-                  <div class="dropdown-list-image mr-3">
-                    <img class="rounded-circle" src="https://source.unsplash.com/Mv9hjnEUHR4/60x60" alt="">
-                    <div class="status-indicator bg-success"></div>
-                  </div>
-                  <div>
-                    <div class="text-truncate">Am I a good boy? The reason I ask is because someone told me that people say this to all dogs, even if they aren't good...</div>
-                    <div class="small text-gray-500">Chicken the Dog · 2w</div>
-                  </div>
-                </a>
-                <a class="dropdown-item text-center small text-gray-500" href="#">Read More Messages</a>
-              </div>
-            </li>
-
             <div class="topbar-divider d-none d-sm-block"></div>
 
             <!-- Nav Item - User Information -->
@@ -329,15 +235,11 @@ if ($_POST) {
               <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
                 <a class="dropdown-item" href="#">
                   <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-                  Profile
+                  Perfil
                 </a>
                 <a class="dropdown-item" href="#">
                   <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
-                  Settings
-                </a>
-                <a class="dropdown-item" href="#">
-                  <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
-                  Activity Log
+                  Configurações
                 </a>
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
@@ -434,19 +336,31 @@ if ($_POST) {
 
           <!-- Gráfico -->
           <?php
+		  
+		  $mat1= "Aplicações para Web 2";
+		  $mat2= "Artes";
+		  $mat3= "Filosofia";
+		  $mat4= "Geografia";
+		  $mat5= "Gestão Industrial";
+		  $mat6= "História";
+		  $mat7= "Lingua Portuguesa e Literatura Brasileira";
+		  $mat8= "Matemática Aplicada e Estatística";
+		  $mat9= "Prática para Desenvolvimento de Sistemas";
+		  $mat10= "Segurança da Informação";
+		  $mat11= "Sociologia";
+		  		  
           $test = array(
-            array("label"=> "Janeiro", "y"=> 10),
-            array("label"=> "Fevereiro", "y"=> 7),
-            array("label"=> "Março", "y"=> 8),
-            array("label"=> "Abril", "y"=> 5),
-            array("label"=> "Maio", "y"=> 4),
-            array("label"=> "Junho", "y"=> 8),
-            array("label"=> "Julho", "y"=> 3),
-            array("label"=> "Agosto", "y"=> 12),
-            array("label"=> "Setembro", "y"=> 6),
-            array("label"=> "Outubro", "y"=> 9),
-            array("label"=> "Novembro", "y"=> 2),
-            array("label"=> "Dezembro", "y"=> 5),
+            array("label"=> $mat1, "y"=> 20),
+            array("label"=> $mat2, "y"=> 17),
+            array("label"=> $mat3, "y"=> 18),
+            array("label"=> $mat4, "y"=> 15),
+            array("label"=> $mat5, "y"=> 14),
+            array("label"=> $mat6, "y"=> 18),
+            array("label"=> $mat7, "y"=> 13),
+            array("label"=> $mat8, "y"=> 22),
+            array("label"=> $mat9, "y"=> 16),
+            array("label"=> $mat10, "y"=> 19),
+            array("label"=> $mat11, "y"=> 15),
           );
           ?>
 
@@ -468,7 +382,7 @@ if ($_POST) {
             },
             data: [{
               type: "stackedBar",
-              name: "Qtd de eventos",
+              name: "Soma Total",
               dataPoints: <?php echo json_encode($test, JSON_NUMERIC_CHECK); ?>
             }]
           });
@@ -479,36 +393,35 @@ if ($_POST) {
 <div id="chartContainer" style="height: 370px; width: 100%;"></div>
 <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
  
-
           <!-- Content Row -->
           <div class="row">
-
+				
             <!-- Content Column -->
             <div class="col-lg-6 mb-4">
 
               <!-- Project Card Example -->
               <div class="card shadow mb-4">
                 <div class="card-header py-3">
-                  <h6 class="m-0 font-weight-bold text-primary">Projects</h6>
+                  <h6 class="m-0 font-weight-bold text-primary">Áreas de Conhecimento</h6>
                 </div>
                 <div class="card-body">
-                  <h4 class="small font-weight-bold">Server Migration <span class="float-right">20%</span></h4>
+                  <h4 class="small font-weight-bold">Linguagens <span class="float-right">20%</span></h4>
                   <div class="progress mb-4">
                     <div class="progress-bar bg-danger" role="progressbar" style="width: 20%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
                   </div>
-                  <h4 class="small font-weight-bold">Sales Tracking <span class="float-right">40%</span></h4>
+                  <h4 class="small font-weight-bold">Matemática <span class="float-right">40%</span></h4>
                   <div class="progress mb-4">
                     <div class="progress-bar bg-warning" role="progressbar" style="width: 40%" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
                   </div>
-                  <h4 class="small font-weight-bold">Customer Database <span class="float-right">60%</span></h4>
+                  <h4 class="small font-weight-bold">Ciências Humanas <span class="float-right">60%</span></h4>
                   <div class="progress mb-4">
                     <div class="progress-bar" role="progressbar" style="width: 60%" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
                   </div>
-                  <h4 class="small font-weight-bold">Payout Details <span class="float-right">80%</span></h4>
+                  <h4 class="small font-weight-bold">Disciplinas Técnicas <span class="float-right">80%</span></h4>
                   <div class="progress mb-4">
                     <div class="progress-bar bg-info" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
                   </div>
-                  <h4 class="small font-weight-bold">Account Setup <span class="float-right">Complete!</span></h4>
+                  <h4 class="small font-weight-bold">Total <span class="float-right">Complete!</span></h4>
                   <div class="progress">
                     <div class="progress-bar bg-success" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
                   </div>
@@ -520,48 +433,32 @@ if ($_POST) {
                 <div class="col-lg-6 mb-4">
                   <div class="card bg-primary text-white shadow">
                     <div class="card-body">
-                      Primary
-                      <div class="text-white-50 small">#4e73df</div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-lg-6 mb-4">
-                  <div class="card bg-success text-white shadow">
-                    <div class="card-body">
-                      Success
-                      <div class="text-white-50 small">#1cc88a</div>
+                      Ciências Humanas
+                      <div class="text-white-50 small">História, Geografia, Filosofia e Sociologia</div>
                     </div>
                   </div>
                 </div>
                 <div class="col-lg-6 mb-4">
                   <div class="card bg-info text-white shadow">
                     <div class="card-body">
-                      Info
-                      <div class="text-white-50 small">#36b9cc</div>
+                      Disciplinas Técnicas
+                      <div class="text-white-50 small">Aplicações para Web 2, Gestão Industrial, Prática de Desenvolvimento de Sistemas e Segurança da Informação</div>
                     </div>
                   </div>
                 </div>
                 <div class="col-lg-6 mb-4">
                   <div class="card bg-warning text-white shadow">
                     <div class="card-body">
-                      Warning
-                      <div class="text-white-50 small">#f6c23e</div>
+                      Matemática
+                      <div class="text-white-50 small">Matemática Aplicada e Estatística</div>
                     </div>
                   </div>
                 </div>
                 <div class="col-lg-6 mb-4">
                   <div class="card bg-danger text-white shadow">
                     <div class="card-body">
-                      Danger
-                      <div class="text-white-50 small">#e74a3b</div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-lg-6 mb-4">
-                  <div class="card bg-secondary text-white shadow">
-                    <div class="card-body">
-                      Secondary
-                      <div class="text-white-50 small">#858796</div>
+                      Linguagens
+                      <div class="text-white-50 small">Artes e Língua Portuguesa e Literatura Brasileira</div>
                     </div>
                   </div>
                 </div>

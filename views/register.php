@@ -1,6 +1,6 @@
 <?php
 if ($_POST) {
-    $dados = fopen($_SERVER['DOCUMENT_ROOT'] . "/data/users.txt", "a") or die("Erro ao abrir arquivo!");
+    $dados = fopen("../data/users.txt", "a") or die("Erro ao abrir arquivo!");
     fwrite($dados, $_POST['nome'] . "/" . $_POST['prontuario'] . "/" . $_POST['email'] . "/" . $_POST['senhaAluno'] . "/" . $_POST['senhaMae'] . "\r\n");
     fclose($dados);
     header("Location: ./login.php?cad=ok");

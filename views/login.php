@@ -92,7 +92,7 @@ function validarLogin($login, $senha) {
                   </form>
                   <hr>
                   <div class="correto">
-                  <?php if ($_GET['cad'] == 'ok'){ ?>
+                  <?php if (isset($_GET['cad']) && $_GET['cad'] == 'ok'){ ?>
                     <p>Cadastro realizado com sucesso!</p>
                   <?php } ?>
                   </div>
