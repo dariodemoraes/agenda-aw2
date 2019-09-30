@@ -1,0 +1,1 @@
+antes da utilização do aplicativo, favor executar os dois scripts SQL na pasta "db", na raiz do projeto
