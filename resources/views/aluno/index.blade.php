@@ -235,7 +235,11 @@
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
             <h1 class="h3 mb-0 text-gray-800">Seja bem vindx, {{ $_SESSION['nome'] }}!</h1>
           </div>
-
+          <div class="correto">
+            @if (old('cad') == 'ok')
+              <p>Evento adicionado com sucesso!</p>
+            @endif
+          </div>
           <!-- EXIBICAO DE EVENTOS -->
           <div class="card shadow mb-4">
                 <!-- Card Header - Dropdown -->
@@ -264,49 +268,48 @@
                 </div>
                 <!-- Card Body -->
                 <div class="card-body">
-                  Dropdown menus can be placed in the card header in order to extend the functionality of a basic card. In this dropdown card example, the Font Awesome vertical ellipsis icon in the card header can be clicked on in order to toggle a dropdown menu.
+                  <img src="{{ URL::asset('images/ifsp.png') }}" alt="IFSP logo" width="500px" height="200px">	
+                  Adicione seus eventos competentes ao IFSP à sua agenda. 
                 </div>
               </div>
-          
 
-          <!-- Content Row -->
-          <div class="row">
-          <form class="user" id='formulario2' method='post' action='<?php $_SERVER['PHP_SELF'] ?>' enctype='multipart/form-data' >
-          Nome do Evento: <br>
-          <input type="text" name="nome" required>
-          <br>
-          <br>
-          Data do Evento <br>
-          <input type="date" name="data" required>
-          <br>
-          <br>
-          <input type="submit" name="submit" value="Adicionar Evento">
-          </form>
-          <hr>
-          
-          <?php if (file_exists($_SERVER['DOCUMENT_ROOT'] . "/data/eventos.txt")) { ?>
-          <table class="table table-bordered" style="background{ color:blue; }">
-          <tr>
-          <th>Nome do evento</th>
-          <th>Data</th>
-          </tr>
-          
-          <?php
-           $dados = fopen($_SERVER['DOCUMENT_ROOT'] . "/data/eventos.txt", "r") or die("Erro ao abrir arquivo!");
-           while(!feof($dados)) {
-               $ponteiro = fgets($dados);
-               $valores = explode("/", $ponteiro);
-               if(!empty($ponteiro)) {
-          ?>
-          <tr>
-               <td><?php echo $valores[1]; ?></td>
-               <td><?php echo $valores[2]; ?></td>
-          </tr> 
-          <?php }
-          } ?>
-          
-          </table>
-          <?php } ?>
+              <!-- EXIBIÇÃO DE LISTA: AGENDA -->
+          <div class="card shadow mb-4">
+            <div class="card-header py-3">
+              <h6 class="m-0 font-weight-bold text-primary">Agenda</h6>
+            </div>
+            <div class="card-body">
+              <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                  <thead>
+                    <tr>
+                      <th>Título</th>
+                      <th>Disciplina</th>
+                      <th>Data/Hora</th>
+                      <th>Local</th>
+                      <th>Descrição</th>
+                    </tr>
+                  </thead>
+                  <tfoot>
+                  @if (empty($eventos))
+                    <tr><td colspan='6'>Nenhum evento cadastrado.</td></tr>
+                  @else 
+                    @foreach($eventos as $e)
+                    <tr>
+                      <td>{{ $e->titulo }}</td>
+                      <td>{{ $e->disciplina_id }}</td>
+                      <td>{{ $e->data }}</td>
+                      <td>{{ $e->local }}</td>
+                      <td>{{ $e->descricao }}</td>
+                    </tr>
+                    @endforeach
+                  @endif
+                  </tfoot>
+                </table>
+              </div>
+            </div>
+
+        </div>
 
           <!-- Gráfico -->
           <?php
@@ -510,7 +513,7 @@
         <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
         <div class="modal-footer">
           <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-          <a class="btn btn-primary" href="{{action('AlunoController@logar')}}">Logout</a>
+          <a class="btn btn-primary" href="{{action('AlunoController@logout')}}">Logout</a>
         </div>
       </div>
     </div>

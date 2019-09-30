@@ -322,35 +322,37 @@
                 <h1 class="m-0 font-weight-bold text-primary">Adicionar Evento</h1>
             </div>
             <div class="card-body">
-                <form class="user" id='formulario2' method='post' action='<?php $_SERVER['PHP_SELF'] ?>' enctype='multipart/form-data' >
+                <form class="user" id='formulario2' method='post' action="{{action('EventoController@criarEvento')}}" enctype='multipart/form-data' >
+                    <input type="hidden" name="_token" value="{{{ csrf_token() }}}" />
+                    <input type="hidden" name="cad" value="ok" />
                     <div class="form-group row">
                         <div class="col-sm">
-                            Título: <input type="text" class="form-control form-control-user" required>
+                            Título: <input type="text" class="form-control form-control-user" name="titulo" required>
                         </div>
                         <div class="col-sm">
-                            Data: <input type="date" class="form-control form-control-user" required>
+                            Data: <input type="date" class="form-control form-control-user" name="data" required>
                         </div>
                         <div class="col-sm">
-                            Hora: <input type="time" class="form-control form-control-user" required>
+                            Hora: <input type="time" class="form-control form-control-user" name="hora" required>
                         </div>
                     </div> 
                     <div class="form-group row">
                         <div class="col-sm">
                             Disciplina: <!--<input type="text" class="form-control form-control-user" required>-->
                             
-                            <select class="form-control form-control-user" id="inputGroupSelect01">
+                            <select class="form-control form-control-user" id="inputGroupSelect01" name="disciplina">
                                 <option selected>Selecione...</option>
-                                <option value="1">Aplicações para Web 2</option>
-                                <option value="2">Gestão Industrial</option>
-                                <option value="3">Segurança da Informação</option>
+                                @foreach ($disciplinas as $d)
+                                <option value="{{ $d->id }}">{{ $d->nome }}</option>
+                                @endforeach
                             </select>
                         </div>
                         <div class="col-sm">
-                            Local: <input type="text" class="form-control form-control-user" required>
+                            Local: <input type="text" class="form-control form-control-user" name="local">
                         </div>
                     </div>
                     <div class="form-group">
-                        Descrição: <textarea class="form-control form-control-user" required></textarea>
+                        Descrição: <textarea class="form-control form-control-user" name="descricao" ></textarea>
                     </div>
                     <div class="float-right">
                         <button type=submit class="btn btn-primary btn-icon-split">

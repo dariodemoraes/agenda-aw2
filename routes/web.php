@@ -16,7 +16,9 @@ Route::get('/cadastro', 'AlunoController@exibirCadastro');
 Route::post('/cadastrar', 'AlunoController@cadastrar');
 Route::post('/validacao', 'AlunoController@validarLogin');
 Route::get('/index', 'AlunoController@mostrarTelaPrincipal');
-Route::get('/criar-evento', 'EventoController@exibirCriarEvento');
+Route::get('/criacao-evento', 'EventoController@exibirCriarEvento');
+Route::post('/criar-evento', 'EventoController@criarEvento');
+Route::get('/logout', 'AlunoController@logout');
 
 //------------------
 

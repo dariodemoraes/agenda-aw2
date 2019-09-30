@@ -21,6 +21,8 @@ class AlunoController extends Controller {
         }
         else {
 
+            $_SESSION['prontuario'] = Request::input('login');
+
             if(Request::input('lembreme')) {
                 setcookie("login", Request::input('login'));
                 setcookie("senha", Request::input('senha')); 
@@ -60,12 +62,25 @@ class AlunoController extends Controller {
     
     public function mostrarTelaPrincipal() {
         session_start();
-        return view('aluno.index');
+        if(isset($_SESSION['prontuario'])) {
+            $eventos = DB::select('select * from evento where aluno_prontuario = ? order by data asc', [$_SESSION['prontuario']]);
+            return view('aluno.index')->with('eventos', $eventos);
+        } else {
+            return redirect()->action('AlunoController@logar');
+        }
+        
     }
 
     public function exibirCriarEvento() {
         session_start();
         return view('evento.criar');
+    }
+
+    public function logout(){
+        session_start();
+        session_destroy();
+        //unset($_COOKIE);
+        return redirect()->action('AlunoController@logar');
     }
 
 }
