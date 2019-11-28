@@ -31,4 +31,5 @@ class EventoController extends Controller {
         return redirect()->action('AlunoController@mostrarTelaPrincipal')->withInput(Request::only('cad'));
     }
 
+
 }

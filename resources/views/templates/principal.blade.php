@@ -16,6 +16,8 @@
   <!-- Custom styles for this template-->
   <link href="{{ URL::asset('stylesheets/sb-admin-2.min.css') }}" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="{{ URL::asset('stylesheets/css.css') }}">
+  <link href="{{ URL::asset('stylesheets/core/main.min.css') }}" rel='stylesheet' />
+  <link href="{{ URL::asset('stylesheets/daygrid/main.min.css') }}" rel='stylesheet' />
 </head>
 
 @yield('conteudo')
@@ -32,6 +34,32 @@
 
 <script type="text/javascript" src="{{ URL::asset('javascripts/javascript.js') }}"></script>
 
+        <script src="{{ URL::asset('javascripts/core/main.min.js') }}"></script>
+        <script src="{{ URL::asset('javascripts/interaction/main.min.js') }}"></script>
+        <script src="{{ URL::asset('javascripts/daygrid/main.min.js') }}"></script>
+        <script src="{{ URL::asset('javascripts/core/locales/pt-br.js') }}"></script>
+        <script>
+
+          document.addEventListener('DOMContentLoaded', function () {
+              var calendarEl = document.getElementById('calendar');
+
+              var calendar = new FullCalendar.Calendar(calendarEl, {
+                  locale: 'pt-br',
+                  plugins: ['interaction', 'dayGrid'],
+                  //defaultDate: '2019-04-12',
+                  editable: true,
+                  eventLimit: true,
+                  events: '/list_eventos.php',
+                  extraParams: function () {
+                      return {
+                          cachebuster: new Date().valueOf()
+                      };
+                  }
+              });
+
+              calendar.render();
+          });
+        </script>
 </body>
 
 </html>
