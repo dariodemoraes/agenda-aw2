@@ -5,6 +5,11 @@ use Request;
 
 class EventoController extends Controller {
 
+    public function index() {
+        $eventos = evento::all();
+        return response()->json($eventos);
+    }
+
     public function exibirCriarEvento() {
         session_start();
         $disciplinas = DB::select('select id, nome from disciplina');

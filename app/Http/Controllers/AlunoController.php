@@ -5,6 +5,11 @@ use Request;
 
 class AlunoController extends Controller {
 
+    public function index() {
+        $alunos = aluno::all();
+        return response()->json($alunos);
+    }
+
     public function logar(){
         session_start();
         //unset($_COOKIE);

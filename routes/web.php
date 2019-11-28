@@ -33,3 +33,9 @@ Route::get('/forgot-password', 'UtilitarioController@forgotPassword');
 Route::get('/404', 'UtilitarioController@error404');
 Route::get('/blank', 'UtilitarioController@blank');
 Route::get('/charts', 'UtilitarioController@charts');
+
+//----------------
+
+Route::get('/api', function() {
+    return redirect('api');
+});

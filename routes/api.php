@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Http\Request;
+use App\Aluno;
+use App\Evento;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +18,15 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::get('/aluno', function () {
+    $alunos = (array) aluno::all();
+    echo json_encode($alunos);
+});
+
+Route::get('/evento', function () {
+    $eventos = (array) evento::all();
+    echo json_encode($eventos);
+});
+
+
