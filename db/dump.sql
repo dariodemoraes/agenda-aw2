@@ -30,8 +30,8 @@ CREATE TABLE IF NOT EXISTS `agenda`.`aluno` (
   `prontuario` CHAR(7) NOT NULL,
   `nome` VARCHAR(255) NOT NULL,
   `email` VARCHAR(255) NOT NULL,
-  `senha` VARCHAR(45) NOT NULL,
-  `senhaResponsavel` VARCHAR(45) NOT NULL,
+  `senha` VARCHAR(55) NOT NULL,
+  `senhaResponsavel` VARCHAR(55) NOT NULL,
   PRIMARY KEY (`prontuario`),
   UNIQUE INDEX `prontuario_UNIQUE` (`prontuario` ASC) VISIBLE,
   UNIQUE INDEX `email_UNIQUE` (`email` ASC) VISIBLE)

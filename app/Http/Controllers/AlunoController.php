@@ -18,8 +18,8 @@ class AlunoController extends Controller {
 
     function validarLogin() {
         session_start();
-        $respostaAluno = DB::select('select * from aluno where prontuario = ? and senha = ?', [Request::input('login'), Request::input('senha')]);
-        $respostaMae = DB::select('select * from aluno where prontuario = ? and senhaResponsavel = ?', [Request::input('login'), Request::input('senha')]);
+        $respostaAluno = DB::select('select * from aluno where prontuario = ? and senha = ?', [Request::input('login'), md5(Request::input('senha'))]);
+        $respostaMae = DB::select('select * from aluno where prontuario = ? and senhaResponsavel = ?', [Request::input('login'), md5(Request::input('senha'))]);
         $pessoa = DB::select('select * from aluno where prontuario = ?', [Request::input('login')]);
         if(empty($respostaAluno) && empty($respostaMae)) {
             return redirect()->action('AlunoController@logar')->withInput(Request::only('erro'));
@@ -30,7 +30,7 @@ class AlunoController extends Controller {
 
             if(Request::input('lembreme')) {
                 setcookie("login", Request::input('login'));
-                setcookie("senha", Request::input('senha')); 
+                setcookie("senha", md5(Request::input('senha'))); 
             }
             
             if(!empty($respostaAluno)) {
@@ -59,8 +59,12 @@ class AlunoController extends Controller {
         $senha = Request::input('senhaAluno');
         $senhaResponsavel = Request::input('senhaMae');
         
+        $senha = md5($senha);
+        $senhaResponsavel = md5($senhaResponsavel);
+
         DB::insert('insert into aluno values (?, ?, ?, ?, ?)',
         array($prontuario, $nome, $email, $senha, $senhaResponsavel));
+        
         
         return redirect()->action('AlunoController@logar')->withInput(Request::only('cad'));
     } 
